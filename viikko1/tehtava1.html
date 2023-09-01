@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Comment  Head holds stuff like what character set page uses sheets or scripts to include ect information about page
+
+body holds display oriented stuff-->
+
+<head>
+    <!--Metadata holds information about data always inside head element-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Trying stuff</title>
+    <style>
+        body {
+            height: 100vh;
+            /*display: flex;
+            align-items:flex-start;*/
+            background: linear-gradient(to top left, #28b487, #7dd56f);
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 50px;
+            line-height: 1.3;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        p.a {
+            color:pink;
+            font-size: 30px;
+            font-family: sans-serif;
+            padding: 50px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p1 id="header-set"></p>
+    </div>
+    <!--Link js file
+    <script src="script.js"></script>
+    <p class = "a"> Nice to meet</p>-->
+    <script>
+        var v1 = "Haloo";
+        var v2 = "Maailma";
+        var tulos = ("<h1>"+v1+" "+v2+"<h2>");
+        document.getElementById("header-set").innerHTML=tulos;
+        console.log(tulos);
+        
+    </script>
+
+   
+</body>
+
+</html>
