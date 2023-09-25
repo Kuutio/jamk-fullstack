@@ -1,0 +1,8 @@
+6 : eka rivi result koska kutsuu funktiota mikä aloittaa koodin.
+1: 6 rivi kutsuu funktiota
+2: returnaa tuloksen
+5: asettaa oikeeseen järjestykseen pitsat ja kinkut ja juustot.
+
+5 rivi tulee myöhemmin koska callback funktio.
+
+vikana 7 rivi tulostaa tuloksen:

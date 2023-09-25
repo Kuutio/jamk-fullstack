@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H03T03</title>
+
+    <style>
+        table td {
+            width: 30px;
+            overflow: hidden;
+            display: inline-block;
+            white-space: nowrap;
+
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>Arvosanalaskin</h3>
+    <table>
+        <tbody>
+            <tr>
+                <td style="background-color: aqua;">T1</td>
+                <td style="background-color: aqua;">T2</td>
+                <td style="background-color: aqua;">T3</td>
+                <td style="background-color: aqua;">T4</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br>
+    <table>
+        <tbody>
+            <tr>
+                <td><input id="11" onblur="calculate()" type="text" value="0"></td>
+                <td><input id="22" onblur="calculate()" type="text" value="0"></td>
+                <td><input id="33" onblur="calculate()" type="text" value="0"></td>
+                <td><input id="44" onblur="calculate()" type="text" value="0"></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br>
+    <div id="pistemaara"></div>
+    <br>
+    <div id="arvosana"></div>
+    <script>
+
+        function calculate() {
+
+
+
+            let eka = parseInt(document.getElementById("11").value)
+            let toka = parseInt(document.getElementById("22").value)
+            let kolmas = parseInt(document.getElementById("33").value)
+            let neljas = parseInt(document.getElementById("44").value)
+
+            if ((eka >= 0 && eka < 7) && (toka >= 0 && toka < 7) && (kolmas >= 0 && kolmas < 7) && (neljas >= 0 && neljas < 7)) {
+
+                let total = eka + toka + kolmas + neljas;
+                let arvosana;
+
+                document.getElementById("pistemaara").innerHTML = "Pistemäärä: " + total;
+
+                switch (true) {
+                    case (total <= 12):
+                        arvosana = 0;
+                        break;
+                    case (total <= 15):
+                        arvosana = 1;
+                        break;
+                    case (total <= 17):
+                        arvosana = 2;
+                        break;
+                    case (total <= 19):
+                        arvosana = 3;
+                        break;
+                    case (total <= 21):
+                        arvosana = 4;
+                        break;
+                    case (total <= 24):
+                        arvosana = 5;
+                        break;
+                    default:
+                        arvosana = 0;
+                }
+
+
+                document.getElementById("arvosana").innerHTML = "Arvosana: " + arvosana;
+
+
+
+
+            } else {
+                document.getElementById("pistemaara").innerHTML = "VIRHE!";
+                document.getElementById("arvosana").innerHTML = "VIRHE!";
+            }
+        }
+
+        calculate();
+    </script>
+</body>
+
+</html>

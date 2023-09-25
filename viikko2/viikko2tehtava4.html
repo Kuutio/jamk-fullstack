@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>1.4</title>
+    <style>
+        body {
+            height: 100vh;
+            /*display: flex;
+            align-items:flex-start;*/
+            background: linear-gradient(to top left, #28b487, #7dd56f);
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 20px;
+            line-height: 1.3;
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            color: black
+        }
+
+        p.a {
+            color: pink;
+            font-size: 30px;
+            font-family: sans-serif;
+            padding: 50px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>OMG - Lady gaga start singing!</h1>
+        <p id="gaga">
+        </p>
+    </div>
+    <script>
+
+
+        const print = (str, taskTime) => {
+            setTimeout(function () { //set timeout ottaa kaksi parametriä koodin ja delayn. ja vaihtoehtoisesti parametrejö
+                //console.log(`${str}`)
+                var p = document.createElement('p');
+                p.textContent = `${str}`;
+                document.body.appendChild(p);
+
+            }, taskTime)
+        };
+        let time = 5000;
+        for (let i = 0; i < 5; i++) {
+            print("NICE - fireworks!", time)
+            time += 5000;
+        }
+        print("WOW - It was best concert in my life...", time += 5000);
+
+
+
+    </script>
+
+</body>

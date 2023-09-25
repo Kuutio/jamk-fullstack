@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tulosta tasoitukset</title>
+
+    <script>
+        var hcpdata = [{ "name": "Ari", "hcp": 54 },
+        { "name": "Pasi", "hcp": 5 },
+        { "name": "Seppo", "hcp": 20 }];
+    </script>
+
+</head>
+
+<body>
+    <button id="buttontasoitukset">Tulosta tasoitukset</button>
+    <ul id="hcplist"></ul>
+
+    <script>
+        let firstClick = false;
+        let button1 = document.getElementById("buttontasoitukset");
+
+        let ulist = document.getElementById("hcplist");
+
+
+        button1.addEventListener("click", function (event) {
+            if (firstClick == false) {
+                for (elements in hcpdata) {
+
+                    var p = document.createElement('li');
+                    p.textContent = hcpdata[elements].name + " " + hcpdata[elements].hcp;
+                    ulist.appendChild(p);
+
+                    firstClick = true;
+
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H03T04</title>
+
+</head>
+
+<body>
+    <h2>SimpleToDo</h2>
+    <p>ToDo: <br> <input id="todo_input" type="text" value=""></p><br>
+
+    <button id="lisaa_button">Lisää</button>
+    <button id="tyhjaa_button">Tyhjää lista</button><br>
+
+    <ul id="todo_list"></ul>
+
+    <script>
+        let inputfield = document.getElementById("todo_input")
+        let button1 = document.getElementById("lisaa_button");
+        let button2 = document.getElementById("tyhjaa_button")
+
+        let ulist = document.getElementById("todo_list");
+
+
+        button1.addEventListener("click", function (event) {
+
+            var li_ele = document.createElement('li');
+            li_ele.textContent = inputfield.value;
+
+            li_ele.addEventListener("click", function (event) {
+                li_ele.remove();
+            });
+            ulist.appendChild(li_ele);
+
+
+
+        });
+
+        button2.addEventListener("click", function (event) {
+            while (ulist.firstChild) {
+                ulist.removeChild(ulist.firstChild);
+            }
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

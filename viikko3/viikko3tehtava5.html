@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H03T05</title>
+
+    <style>
+        #rectangle {
+            margin-left: 10px;
+            width: 300px;
+            height: 240px;
+            background: lightskyblue;
+        }
+
+        #rectangle2 {
+            margin: 10px;
+            width: 280px;
+            height: 90px;
+            background: yellow;
+        }
+
+        #seppo {
+            margin: 10px;
+        }
+
+        #vaihda_button {
+            margin: 10px;
+            background-color: cadetblue;
+        }
+
+        p.a {
+            margin: 10px;
+        }
+
+        p.b {
+            margin: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="rectangle">
+
+        <p id="seppo"><label for="juhla_varit">Valitse juhlaväri:</label><br>
+            <select name="juhla_varit" id="juhla_varit" onblur="tulosta_varikoodi()">
+                <option value="keltainen">Keltainen</option>
+                <option value="punainen">Punainen</option>
+                <option value="valkoinen">Valkoinen</option>
+                <option value="vihrea">Vihreä</option>
+            </select> <br> Mikä juhla? <br>
+            <!-- onblur="tulosta_juhlanimi() -->
+
+            <input id="juhla_input" onkeyup="tulosta_juhlanimi()" ontype="text" value="">
+            <br>
+        </p>
+        <button id="vaihda_button">Vaihda valittu taustaväri</button> <br>
+        <div id="rectangle2">
+            <p.b style="font-weight:bold;">Tulostusalue</p.b> <br>
+            <p.a id=kooditulostus></p.a><br>
+            <p.c id=tekstitulostus></p.c>
+
+        </div>
+    </div>
+
+
+    <script>
+
+
+        function tulosta_varikoodi() {
+
+            var vari_id_valikko = document.getElementById("juhla_varit")
+            var vari = vari_id_valikko.value;
+
+            var rectangle2 = document.getElementById("rectangle2");
+            var tulostus = document.getElementById("kooditulostus");
+
+            //console.log(vari)
+
+
+            var bgcolor = window.getComputedStyle(rectangle2).backgroundColor;
+            console.log(bgcolor)
+
+            var split = bgcolor.split(",");
+
+            //var r = split[0].substring(4)
+            //var g = split[1]
+            //var b = split[2].slice(0, -1); 5
+
+            var r = split[0].match(/\d+/g);
+            var g = split[1].match(/\d+/g);
+            var b = split[2].match(/\d+/g);
+
+            console.log(r + " " + g + " " + b)
+            //colorReal = rgbToHex(parseInt(r), parseInt(g), parseInt(b));
+            //console.log(colorReal);
+            let r1 = parseInt(r)
+            let g1 = parseInt(g)
+            let b1 = parseInt(b)
+            let valuefinal = rgbToHex(r1, g1, b1)
+
+            tulostus.innerHTML = "Valittu: #" + valuefinal;
+        }
+
+        function componentToHex(c) {
+            var hex = c.toString(16);
+            //console.log(hex)
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        function rgbToHex(r, g, b) {
+            return (componentToHex(r) + componentToHex(g) + componentToHex(b))
+        }
+
+
+        button1 = document.getElementById("vaihda_button");
+
+        button1.addEventListener("click", function (event) {
+
+            var vari_id_valikko = document.getElementById("juhla_varit")
+            var vari = vari_id_valikko.value;
+
+            switch (vari) {
+                case 'keltainen':
+                    rectangle2.style.backgroundColor = "yellow";
+                    break;
+                case 'punainen':
+                    rectangle2.style.backgroundColor = "red";
+                    break;
+                case 'vihrea':
+                    rectangle2.style.backgroundColor = "green";
+                    break;
+                case 'valkoinen':
+                    rectangle2.style.backgroundColor = "white";
+                    break;
+                default:
+                    rectangle2.style.backgroundColor = "white";
+                    break;
+
+            }
+            tulosta_varikoodi()
+        });
+
+
+        function tulosta_juhlanimi() {
+
+            var alue = document.getElementById("tekstitulostus");
+
+            window.addEventListener("keyup", function (ev) {
+                var inputti = document.getElementById("juhla_input").value;
+                if (ev.keyCode <= 57 && ev.keyCode >= 48) { //jätin numpadit pois ku sanottiin et toinen riittää.
+
+                    alue.innerHTML = "ERROR: NO NUMBERS";
+
+                } else {
+                    alue.innerHTML = inputti;
+
+                }
+            })
+
+        }
+
+
+
+        /*
+   
+           button2.addEventListener("click", function (event) {
+               while (ulist.firstChild) {
+                   ulist.removeChild(ulist.firstChild);
+               }
+   
+           });
+           */
+
+
+
+
+    </script>
+</body>
+
+</html>

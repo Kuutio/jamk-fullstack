@@ -1,0 +1,17 @@
+siinä on execute funktio jossa on kolme parametriä. yksi on callback parametri print. Print funktiolla on jokin ajastus näköjään että tulostaa vasta myöhemmin print funktiot joten ajattelisin että tulostaa ensiksi kaikki muut koodit.
+
+11 rivillä lähtee tulostamaan "Task1 to execution..."
+sitten "Task2 to execution..."
+sitten "Task3 to execution..."
+sitten "last code line evecuted.
+
+ajastin sitten loppuu ja tulostaa kaikista print funktiot. ajastimen parametri on 18 rivillä pienin joten tulostaa varmaan ensiksi sen
+print ottaa str joka on task1, task2 tai task3
+
+sitten siis tulostaa.
+"Task3 finished!"
+
+sitten ajastimen parametrit ovat samat task1 ja task2 mutta task1 on ajettu ensin joten tulostaa
+task1 finished!
+lopuksi
+task2 finished
