@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H04T01</title>
+
+    <style>
+        #houses {
+            width: 600px;
+            height: 800px;
+            text-align: left;
+            overflow: auto;
+            margin: 10px;
+        }
+
+        .houseContainer {
+            display: block;
+            border: 1px;
+            border: solid;
+            border-color: grey;
+            width: 570px;
+            height: 165px;
+            font-style: normal;
+            font-size: 12px;
+            margin: 2px;
+            padding: 2px;
+        }
+
+        .houseImage {
+            width: 225px;
+            height: 160px;
+            float: left;
+            margin: 2px;
+
+        }
+
+        p.header {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        p.text {
+            font-style: italic;
+            font-size: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" id="koko" name="kokoswitch" />
+        <label for="koko">alle 200m2</label>
+
+        <input type="checkbox" id="hinta" name="hintaswitch" />
+        <label for="hinta">alle 1 000 000 euroa</label>
+    </div>
+    <div id="houses"></div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
